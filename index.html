@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h1>Convertir de divisasa</h1>
+        <section>
+            <label for="">Cantidad</label>
+            <input value="1" type="number" id="cantidad">
+        </section>
+        <section>
+            <div>
+                <img src="" alt="">
+                <div>
+                    <p>De</p>
+                    <select name="" id="value_de">
+                        <option selected value="USD">USD</option>
+                        <option value="MXN">MXN</option>
+                        <option value="JPY">JPY</option>
+                        <option value="GBP">GBP</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CHF">CHF</option>
+                    </select>
+                </div>
+            </div>
+            <button><img style="width: 1rem;" src="./img/right-left-solid.svg" alt=""></button>
+            <div>
+                <div>
+                    <p>A</p>
+                    <select name="" id="value_a">
+                        <option value="USD">USD</option>
+                        <option selected value="MXN">MXN</option>
+                        <option value="JPY">JPY</option>
+                        <option value="GBP">GBP</option>
+                        <option value="EUR">EUR</option>
+                        <option value="CHF">CHF</option>
+                    </select>
+                </div>
+                <img src="" alt="">
+            </div>
+        </section>
+        <button id="btn_convertir">Convertir</button>
+        <section>
+            <p id="equivalencia_base">100 pesos mexicanos =</p>
+            <p id="equivalencia_resultante">6.9 dolares</p>
+        </section>
+    </main>
+
+    <script src="./api.js"></script>
+</body>
+
+</html>
