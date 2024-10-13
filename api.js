@@ -21,4 +21,11 @@ fetch(API_URL)
   console.log(cantidad, value_de, value_a);
 });
 
+document.getElementById("btn_invertir").addEventListener("click", function () {
+  let value_1 = document.getElementById("value_de").value;
+  let value_2 = document.getElementById("value_a").value;
+  let aux = value_2;
 
+  document.getElementById("value_a").value = value_1;
+  document.getElementById("value_de").value = aux;
+});

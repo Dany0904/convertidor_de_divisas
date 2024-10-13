@@ -1,0 +1,116 @@
+.kay-pho-du-regular {
+    font-family: "Kay Pho Du", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kay-pho-du-medium {
+    font-family: "Kay Pho Du", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.kay-pho-du-semibold {
+    font-family: "Kay Pho Du", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.kay-pho-du-bold {
+    font-family: "Kay Pho Du", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+    padding: 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: #fff;
+    border-radius: 0.625rem;
+}
+
+.main-content h1 {
+    margin: 0;
+}
+
+.input_cantidad {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 60%;
+}
+
+.input_cantidad label {
+    font-size: 1.25rem;
+}
+
+.input_cantidad input {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.contain_selects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contain_img_select {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.contain_img_select div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contain_img_select div p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.contain_img_select div select {
+    border: 0;
+    width: 6rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.icon_flag {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+#btn_invertir{
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 0.25rem;
+}
+
+#btn_invertir img{
+    height: 1rem;
+}
