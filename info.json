@@ -1,0 +1,38 @@
+{
+    "MXN":{
+        "url_image": "./img/MXN_flag.png",
+        "color": "#006847",
+        "name":"peso mexicano",
+        "names": "pesos mexcanos"
+    },
+    "USD":{
+        "url_image": "./img/USD_flag.png",
+        "color": "#0A3161",
+        "name":"dólar estadounidense",
+        "names": "dólares estadounidenses"
+    },
+    "JPY":{
+        "url_image": "./img/JPY_flag.png",
+        "color": "#A1002C",
+        "name":"yen japonés",
+        "names": "yen japonés"
+    },
+    "GBP":{
+        "url_image": "./img/GBP_flag.png",
+        "color": "#012169",
+        "name":"libra esterlina",
+        "names": "libras esterlinas"
+    },
+    "EUR":{
+        "url_image": "./img/EUR_flag.png",
+        "color": "#FFCC00",
+        "name":"euro",
+        "names": "euros"
+    },
+    "CHF":{
+        "url_image": "./img/CHF_flag.png",
+        "color": "#FF0000",
+        "name":"franco suizo",
+        "names": "francos suizos"
+    }
+}

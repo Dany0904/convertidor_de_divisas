@@ -9,23 +9,75 @@ document.getElementById("btn_convertir").addEventListener("click", function () {
 
   const API_URL = 'https://v6.exchangerate-api.com/v6/335e42f97114176b73f804c6/pair/'+value_de+'/'+value_a;
 
-fetch(API_URL)
+  fetch(API_URL)
   .then(response => response.json())
   .then(data => {
     resultado = data.conversion_rate * cantidad;
-    equivalencia_base.textContent = cantidad;
-    equivalencia_resultante.textContent = resultado;
+
+    return fetch('info.json');
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (cantidad > 1) {
+      equivalencia_base.textContent = cantidad + ' ' + data[value_de].names;
+    } else {
+      equivalencia_base.textContent = cantidad + ' ' + data[value_a].name;
+    }
+
+    if (resultado > 1) {
+      equivalencia_resultante.textContent = resultado.toFixed(2) + ' ' + data[value_de].names;
+    } else {
+      equivalencia_resultante.textContent = resultado.toFixed(2) + ' ' + data[value_a].name;
+    }
   })
   .catch(error => console.error('Error al obtener los datos:', error));
 
-  console.log(cantidad, value_de, value_a);
+
 });
 
 document.getElementById("btn_invertir").addEventListener("click", function () {
+
   let value_1 = document.getElementById("value_de").value;
   let value_2 = document.getElementById("value_a").value;
-  let aux = value_2;
+  let aux = value_1;
 
-  document.getElementById("value_a").value = value_1;
-  document.getElementById("value_de").value = aux;
+  console.log('antes');
+  console.log('value_de' + value_1);
+  console.log('value_a' + value_2);
+
+  document.getElementById("value_de").value = value_2;
+  document.getElementById("value_a").value = aux;
+
+  let img_value_1 = document.getElementById('img_value_de').src
+  let img_value_2 = document.getElementById('img_value_a').src
+  let img_aux = img_value_1;
+
+  document.getElementById("img_value_de").src = img_value_2;
+  document.getElementById("img_value_a").src = img_aux;
+  console.log('despues');
+  
+  console.log('value_de' + value_1);
+  console.log('value_a' + value_2);
+});
+
+document.getElementById('value_de').addEventListener('change', function() {
+
+   fetch('info.json')
+   .then(response => response.json()) 
+   .then(data => {
+     document.getElementById('img_value_de').src = data[this.value].url_image
+   })
+   .catch(error => console.error('Error cargando el JSON:', error));
+  
+});
+
+document.getElementById('value_a').addEventListener('change', function() {
+
+  fetch('info.json')
+  .then(response => response.json()) 
+  .then(data => {
+    document.getElementById('img_value_a').src = data[this.value].url_image
+  })
+  .catch(error => console.error('Error cargando el JSON:', error));
+ 
 });
