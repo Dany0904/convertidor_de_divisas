@@ -21,11 +21,11 @@ document.getElementById("btn_convertir").addEventListener("click", function () {
     if (cantidad > 1) {
       equivalencia_base.textContent = cantidad + ' ' + data[value_de].names;
     } else {
-      equivalencia_base.textContent = cantidad + ' ' + data[value_a].name;
+      equivalencia_base.textContent = cantidad + ' ' + data[value_de].name;
     }
 
     if (resultado > 1) {
-      equivalencia_resultante.textContent = resultado.toFixed(2) + ' ' + data[value_de].names;
+      equivalencia_resultante.textContent = resultado.toFixed(2) + ' ' + data[value_a].names;
     } else {
       equivalencia_resultante.textContent = resultado.toFixed(2) + ' ' + data[value_a].name;
     }
