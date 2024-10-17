@@ -31,7 +31,7 @@
     },
     "CHF":{
         "url_image": "./img/CHF_flag.png",
-        "color": "#FF0000",
+        "color": "#FFFFFF",
         "name":"franco suizo",
         "names": "francos suizos"
     }

@@ -36,14 +36,11 @@ document.getElementById("btn_convertir").addEventListener("click", function () {
 });
 
 document.getElementById("btn_invertir").addEventListener("click", function () {
+  const root = document.documentElement;
 
   let value_1 = document.getElementById("value_de").value;
   let value_2 = document.getElementById("value_a").value;
   let aux = value_1;
-
-  console.log('antes');
-  console.log('value_de' + value_1);
-  console.log('value_a' + value_2);
 
   document.getElementById("value_de").value = value_2;
   document.getElementById("value_a").value = aux;
@@ -54,18 +51,21 @@ document.getElementById("btn_invertir").addEventListener("click", function () {
 
   document.getElementById("img_value_de").src = img_value_2;
   document.getElementById("img_value_a").src = img_aux;
-  console.log('despues');
-  
-  console.log('value_de' + value_1);
-  console.log('value_a' + value_2);
+
+  let color_value_1 = getComputedStyle(root).getPropertyValue('--color-top');
+  let color_value_2 = getComputedStyle(root).getPropertyValue('--color-bottom');
+  let color_aux = color_value_1;
+
+  document.documentElement.style.setProperty('--color-top', color_value_2);
+  document.documentElement.style.setProperty('--color-bottom',  color_aux);
 });
 
 document.getElementById('value_de').addEventListener('change', function() {
-
    fetch('info.json')
    .then(response => response.json()) 
    .then(data => {
-     document.getElementById('img_value_de').src = data[this.value].url_image
+     document.getElementById('img_value_de').src = data[this.value].url_image;
+     document.documentElement.style.setProperty('--color-top',  data[this.value].color);
    })
    .catch(error => console.error('Error cargando el JSON:', error));
   
@@ -76,7 +76,8 @@ document.getElementById('value_a').addEventListener('change', function() {
   fetch('info.json')
   .then(response => response.json()) 
   .then(data => {
-    document.getElementById('img_value_a').src = data[this.value].url_image
+    document.getElementById('img_value_a').src = data[this.value].url_image;
+    document.documentElement.style.setProperty('--color-bottom',  data[this.value].color);
   })
   .catch(error => console.error('Error cargando el JSON:', error));
  

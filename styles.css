@@ -1,7 +1,6 @@
-.kay-pho-du-regular {
-    font-family: "Kay Pho Du", serif;
-    font-weight: 400;
-    font-style: normal;
+:root{
+    --color-top: #0A3161;
+    --color-bottom: #006847;
 }
 
 .kay-pho-du-medium {
@@ -25,13 +24,14 @@
 .body {
     width: 100vw;
     height: 100vh;
-    background-color: antiquewhite;
+    background: linear-gradient(to bottom, var(--color-top), var(--color-bottom)), rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     margin: 0;
     justify-content: center;
     padding: 0;
     overflow: hidden;
+    background-blend-mode: overlay;
 }
 
 .main-content {
